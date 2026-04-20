@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-error": "#ffefee",
+                "on-primary": "#ffeff0",
+                "primary-container": "#ff7195",
+                "tertiary-fixed-dim": "#00ed7d",
+                "background": "#fbf6ee",
+                "inverse-on-surface": "#a09c96",
+                "on-surface-variant": "#5e5b55",
+                "surface-container": "#ede8de",
+                "surface-dim": "#d9d4c9",
+                "on-error-container": "#570008",
+                "surface-container-low": "#f5f0e7",
+                "primary": "#b6004f",
+                "surface-container-high": "#e7e2d8",
+                "error-container": "#fb5151",
+                "secondary": "#665d00",
+                "primary-fixed-dim": "#ff5486",
+                "on-surface": "#302f29",
+                "on-primary-container": "#4d001d",
+                "surface-bright": "#fbf6ee",
+                "tertiary-dim": "#005c2d",
+                "tertiary-container": "#00fd86",
+                "primary-dim": "#a00044",
+                "secondary-dim": "#585100",
+                "outline": "#797670",
+                "surface": "#fbf6ee",
+                "error": "#b31b25",
+                "on-background": "#302f29",
+                "secondary-fixed": "#efdd30",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#e0ce1e",
+                "tertiary-fixed": "#00fd86",
+                "on-tertiary-container": "#005b2c",
+                "tertiary": "#006a34",
+                "inverse-primary": "#ff4c83",
+                "on-tertiary-fixed-variant": "#006632",
+                "on-secondary": "#fff4ad",
+                "primary-fixed": "#ff7195",
+                "on-primary-fixed-variant": "#5e0025",
+                "on-tertiary-fixed": "#004620",
+                "error-dim": "#9f0519",
+                "surface-variant": "#e1dcd2",
+                "on-tertiary": "#cdffd4",
+                "inverse-surface": "#0f0e0a",
+                "surface-tint": "#b6004f",
+                "on-secondary-fixed-variant": "#605700",
+                "on-primary-fixed": "#000000",
+                "outline-variant": "#b0ada5",
+                "surface-container-highest": "#e1dcd2",
+                "secondary-container": "#efdd30",
+                "on-secondary-fixed": "#413b00",
+                "on-secondary-container": "#554e00"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Space Grotesk"],
+                "label": ["IBM Plex Mono"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .dot-grid {
+            background-image: radial-gradient(circle, #302f29 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .signature-frame {
+            border: 3px solid #111111;
+        }
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px #111111;
+        }
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px #111111;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 2px 2px 0px 0px #111111;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container min-h-screen relative overflow-x-hidden">
+<div class="fixed inset-0 dot-grid pointer-events-none z-0"></div>
+<!-- Navigation -->
+<nav class="bg-[#F5F0E8] dark:bg-zinc-900 border-b-[3px] border-[#111111] dark:border-white shadow-[6px_6px_0px_0px_#111111] flex justify-between items-center w-full px-8 py-4 h-24 sticky top-0 z-50">
+<div class="flex items-center">
+<span class="text-4xl font-black italic tracking-tighter text-[#111111] dark:text-white -ml-4 font-headline uppercase">CINEMATCH</span>
+</div>
+<div class="hidden md:flex gap-8 items-center font-['Space_Grotesk'] font-black tracking-tighter uppercase">
+<a class="text-[#111111] dark:text-zinc-300 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform" href="#">DISCOVER</a>
+<a class="text-[#111111] dark:text-zinc-300 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform" href="#">CURATED</a>
+<a class="text-[#FF2D78] underline decoration-[3px] underline-offset-4 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform" href="#">AI LAB</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="bg-[#FF2D78] text-white signature-frame neo-shadow px-6 py-2 font-black uppercase text-sm hover:-translate-y-0.5 hover:translate-x-0.5 active:translate-y-1 active:shadow-none transition-all duration-75">GET ACCESS</button>
+</div>
+</nav>
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-12">
+<!-- Hero Header -->
+<header class="mb-24 relative">
+<div class="absolute -top-12 -left-4 text-primary opacity-20 pointer-events-none select-none">
+<span class="font-label text-9xl">0xDOCS</span>
+</div>
+<h1 class="font-headline font-black text-7xl md:text-9xl text-[#111111] tracking-tighter -ml-2 mb-4 leading-none">
+                Under The Hood <span class="inline-block hover:rotate-12 transition-transform duration-300">🔧</span>
+</h1>
+<p class="font-label text-lg max-w-2xl bg-surface-container-highest inline-block px-4 py-1 border-l-4 border-primary">
+                A TECHNICAL LOOK AT HOW CINEMATCH DECONSTRUCTS CINEMA INTO RAW DATA VECTORS.
+            </p>
+</header>
+<!-- Call-out Box -->
+<section class="mb-24">
+<div class="bg-secondary-container signature-frame neo-shadow p-8 md:p-12 relative overflow-hidden">
+<div class="absolute -right-12 -top-12 opacity-10">
+<span class="material-symbols-outlined text-[12rem]" data-icon="dna">genetics</span>
+</div>
+<h2 class="font-headline font-black text-3xl md:text-5xl text-[#111111] mb-6 tracking-tight">
+                    No user data needed. No cold start problem... Just pure movie DNA — compared mathematically. ✦
+                </h2>
+<div class="flex items-center gap-4">
+<span class="font-label text-xs font-bold uppercase tracking-widest bg-[#111111] text-white px-3 py-1">Zero-Trust Privacy</span>
+<div class="h-[2px] flex-grow bg-[#111111]"></div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Section -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label text-primary font-bold">01 // CORE_STACK</span>
+<h3 class="font-headline font-black text-5xl uppercase tracking-tighter">The Engine Room</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Tech Card 1 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-primary-container">
+<div class="text-6xl mb-6">🐍</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">Python</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">The backbone of our data pipeline, orchestrating complex transformations and model serving.</p>
+</div>
+<!-- Tech Card 2 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-tertiary-fixed">
+<div class="text-6xl mb-6">🐼</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">Pandas</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">High-performance data manipulation for structured movie metadata and feature sets.</p>
+</div>
+<!-- Tech Card 3 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-inverse-primary">
+<div class="text-6xl mb-6">🤖</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">Scikit-learn</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">Implementing robust machine learning algorithms for text vectorization and proximity search.</p>
+</div>
+<!-- Tech Card 4 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-secondary-fixed">
+<div class="text-6xl mb-6">🔢</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">NumPy</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">Foundation for all numerical operations and multi-dimensional matrix calculations.</p>
+</div>
+<!-- Tech Card 5 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-[#111111]">
+<div class="text-6xl mb-6">🥒</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">Pickle</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">Binary serialization for our pre-computed movie database (df.pkl) and similarity matrices.</p>
+</div>
+<!-- Tech Card 6 -->
+<div class="bg-surface-container-lowest signature-frame neo-shadow p-8 border-b-[8px] border-on-surface-variant">
+<div class="text-6xl mb-6">📓</div>
+<h4 class="font-headline font-black text-2xl mb-2 uppercase">Jupyter</h4>
+<p class="text-on-surface-variant font-medium leading-relaxed">The laboratory where our recommendation algorithms are iteratively tested and refined.</p>
+</div>
+</div>
+</section>
+<!-- Workflow Section -->
+<section class="mb-32">
+<div class="mb-12">
+<span class="font-label text-primary font-bold">02 // WORKFLOW_LOGIC</span>
+<h3 class="font-headline font-black text-5xl uppercase tracking-tighter">Content Pipeline</h3>
+</div>
+<div class="space-y-4 md:space-y-0 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-0 mb-12">
+<div class="bg-[#111111] text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">1</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">INGESTION</h5>
+<p class="font-bold">Loading <span class="bg-surface-container px-1">df.pkl</span> containing thousands of movie metadata points.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-32 mb-12">
+<div class="bg-[#111111] text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">2</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">VECTORIZATION</h5>
+<p class="font-bold">Applying <span class="bg-surface-container px-1">TF-IDF Vectorization</span> to extract semantic features from tags.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl rotate-90" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-64 mb-12">
+<div class="bg-[#111111] text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">3</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">SIMILARITY</h5>
+<p class="font-bold">Generating the <span class="bg-surface-container px-1">tfidf.pkl</span> matrix for rapid mathematical lookups.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl rotate-0" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-[24rem] mb-12">
+<div class="bg-[#111111] text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">4</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">MAPPING</h5>
+<p class="font-bold">Executing <span class="bg-surface-container px-1">Cosine Similarity</span> between high-dimensional vectors.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl rotate-90" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-[12rem] mb-12">
+<div class="bg-[#111111] text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">5</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">FILTERING</h5>
+<p class="font-bold">Sorting indices to find the top 5 closest mathematical neighbors in the film space.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col md:flex-row items-center gap-6 md:translate-x-0 mb-12">
+<div class="bg-primary text-white w-16 h-16 flex items-center justify-center font-headline font-black text-2xl signature-frame shrink-0">6</div>
+<div class="bg-surface-container-lowest signature-frame p-6 neo-shadow w-full md:w-96">
+<h5 class="font-label font-bold text-xs text-primary mb-2">OUTPUT</h5>
+<p class="font-bold">Rendering the matches via the UI layer for the ultimate <span class="bg-surface-container px-1">CINEMATCH</span> experience.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Secondary Info -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<div class="md:col-span-2 bg-surface-container signature-frame p-8 flex flex-col justify-between">
+<div class="mb-12">
+<h3 class="font-headline font-black text-4xl mb-4">Content-Based Filtering</h3>
+<p class="text-lg leading-relaxed opacity-80">Unlike Netflix or Amazon, we don't care what your friends watched. We care about the story arcs, director motifs, and character archetypes defined in the movie's meta-tags. This eliminates the popularity bias inherent in most systems.</p>
+</div>
+<div class="bg-white signature-frame p-4 font-label text-sm">
+                    QUERY_EXECUTION_TIME: <span class="text-primary font-bold">0.042ms</span>
+</div>
+</div>
+<div class="bg-primary text-white signature-frame p-8 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-7xl mb-4" data-icon="precision_manufacturing">precision_manufacturing</span>
+<p class="font-headline font-black text-2xl">PRECISION OVER POPULARITY</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-black w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start gap-8 border-t-[3px] border-[#111111] dark:border-zinc-800">
+<div class="flex flex-col gap-4">
+<span class="text-lg font-black text-white bg-black px-2 font-headline w-fit">CINEMATCH_CORE</span>
+<p class="font-['IBM_Plex_Mono'] text-[10px] tracking-widest uppercase text-zinc-500">BUILD_V1.0.4 // CINEMATCH_CORE</p>
+</div>
+<div class="flex flex-col items-start gap-4">
+<p class="font-headline font-bold text-xl">Built by Sumit Roy</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-white signature-frame neo-shadow-sm active-press hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white signature-frame neo-shadow-sm active-press hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-white signature-frame neo-shadow-sm active-press hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 font-['IBM_Plex_Mono'] text-[10px] tracking-widest uppercase text-zinc-500">
+<a class="hover:text-[#FF2D78] underline" href="#">INSTAGRAM</a>
+<a class="hover:text-[#FF2D78] underline" href="#">GITHUB</a>
+<a class="hover:text-[#FF2D78] underline" href="#">API_DOCS</a>
+<a class="hover:text-[#FF2D78] underline" href="#">CREDITS</a>
+</div>
+</footer>
+<!-- Bottom Nav (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full border-t-[3px] border-[#111111] dark:border-white z-50 bg-[#F5F0E8] dark:bg-zinc-900 flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center gap-1 text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase">FEED</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase">SEARCH</span>
+</a>
+<a class="flex flex-col items-center gap-1 bg-[#FFEC40] text-[#111111] border-[2px] border-[#111111] px-4 py-1 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase">VAULT</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase">USER</span>
+</a>
+</nav>
+</body></html>

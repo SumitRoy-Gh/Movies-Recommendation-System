@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CINEMATCH // AI LAB</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&amp;family=IBM+Plex+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffefee",
+                        "on-primary": "#ffeff0",
+                        "primary-container": "#ff7195",
+                        "tertiary-fixed-dim": "#00ed7d",
+                        "background": "#fbf6ee",
+                        "inverse-on-surface": "#a09c96",
+                        "on-surface-variant": "#5e5b55",
+                        "surface-container": "#ede8de",
+                        "surface-dim": "#d9d4c9",
+                        "on-error-container": "#570008",
+                        "surface-container-low": "#f5f0e7",
+                        "primary": "#b6004f",
+                        "surface-container-high": "#e7e2d8",
+                        "error-container": "#fb5151",
+                        "secondary": "#665d00",
+                        "primary-fixed-dim": "#ff5486",
+                        "on-surface": "#302f29",
+                        "on-primary-container": "#4d001d",
+                        "surface-bright": "#fbf6ee",
+                        "tertiary-dim": "#005c2d",
+                        "tertiary-container": "#00fd86",
+                        "primary-dim": "#a00044",
+                        "secondary-dim": "#585100",
+                        "outline": "#797670",
+                        "surface": "#fbf6ee",
+                        "error": "#b31b25",
+                        "on-background": "#302f29",
+                        "secondary-fixed": "#efdd30",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e0ce1e",
+                        "tertiary-fixed": "#00fd86",
+                        "on-tertiary-container": "#005b2c",
+                        "tertiary": "#006a34",
+                        "inverse-primary": "#ff4c83",
+                        "on-tertiary-fixed-variant": "#006632",
+                        "on-secondary": "#fff4ad",
+                        "primary-fixed": "#ff7195",
+                        "on-primary-fixed-variant": "#5e0025",
+                        "on-tertiary-fixed": "#004620",
+                        "error-dim": "#9f0519",
+                        "surface-variant": "#e1dcd2",
+                        "on-tertiary": "#cdffd4",
+                        "inverse-surface": "#0f0e0a",
+                        "surface-tint": "#b6004f",
+                        "on-secondary-fixed-variant": "#605700",
+                        "on-primary-fixed": "#000000",
+                        "outline-variant": "#b0ada5",
+                        "surface-container-highest": "#e1dcd2",
+                        "secondary-container": "#efdd30",
+                        "on-secondary-fixed": "#413b00",
+                        "on-secondary-container": "#554e00"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["IBM Plex Mono"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-image: radial-gradient(#302f29 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-color: #fbf6ee;
+        }
+        .neo-shadow { shadow-[6px_6px_0px_0px_#111111]; }
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 2rem;
+        }
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 2rem;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#F5F0E8] dark:bg-zinc-900 border-b-[3px] border-[#111111] dark:border-white shadow-[6px_6px_0px_0px_#111111] flex justify-between items-center w-full px-8 py-4 h-24 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container border-[3px] border-[#111111] px-4 py-2 shadow-[4px_4px_0px_0px_#111111]">
+<h1 class="text-4xl font-black italic tracking-tighter text-[#111111] dark:text-white uppercase font-headline">
+                    CINEMATCH 🎬
+                </h1>
+</div>
+<div class="hidden md:block bg-tertiary-container border-[2px] border-[#111111] px-2 py-1 rotate-[-3deg] -mt-8">
+<span class="font-label text-[10px] font-bold tracking-tight text-on-tertiary-container uppercase">✦ Powered by TF-IDF</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-headline font-black tracking-tighter uppercase text-[#FF2D78] underline decoration-[3px] underline-offset-4 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform active:translate-y-1 active:shadow-none" href="#">DISCOVER</a>
+<a class="font-headline font-black tracking-tighter uppercase text-[#111111] dark:text-zinc-300 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform active:translate-y-1 active:shadow-none" href="#">CURATED</a>
+<a class="font-headline font-black tracking-tighter uppercase text-[#111111] dark:text-zinc-300 hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform active:translate-y-1 active:shadow-none" href="#">AI LAB</a>
+</nav>
+<div class="flex gap-4">
+<button class="font-headline font-black tracking-tighter uppercase px-6 py-2 border-[3px] border-[#111111] bg-primary-fixed shadow-[4px_4px_0px_0px_#111111] hover:-translate-y-0.5 hover:translate-x-0.5 transition-transform active:translate-y-1 active:shadow-none">GET ACCESS</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-8 pt-20 pb-32">
+<!-- Hero Section -->
+<section class="mb-24 text-center">
+<div class="relative inline-block mb-12">
+<h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase font-headline leading-[0.9] text-left max-w-4xl -ml-4">
+                    Find Your Next <br/>
+<span class="relative">
+                        Obsession.
+                        <div class="absolute -bottom-2 left-0 w-full h-4 bg-secondary-fixed -z-10"></div>
+</span>
+</h2>
+</div>
+<!-- Search Console -->
+<div class="max-w-3xl mx-auto mt-12 bg-surface-container-lowest border-[3px] border-[#111111] shadow-[12px_12px_0px_0px_#111111] p-2 flex flex-col md:flex-row gap-2">
+<div class="flex-grow flex items-center px-4 bg-surface-container-low border-[2px] border-[#111111] focus-within:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[#111111]">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-label text-lg py-4 placeholder:text-on-surface-variant" placeholder="I want a movie like Interstellar but more emotional..." type="text"/>
+</div>
+<button class="bg-secondary-container font-headline font-black text-xl px-8 py-4 border-[3px] border-[#111111] whitespace-nowrap hover:bg-[#FFEC40] active:translate-y-1 transition-all">
+                    RECOMMEND ✦
+                </button>
+</div>
+</section>
+<!-- Watchlist Title -->
+<div class="mb-12">
+<h3 class="text-3xl font-black tracking-tighter uppercase font-headline flex items-center gap-4">
+                🍿 Here's your watchlist, bestie —
+                <div class="h-1 flex-grow bg-[#111111]"></div>
+</h3>
+</div>
+<!-- Masonry Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<article class="bg-[#FFF9C4] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[1.2deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="cinematic shot of glowing colorful space nebulae with dark silhouettes of distant planets in deep artistic contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsXJBWaZd4G5Ed64_vkhLWFyAHw6ZTW3PZFWESWmaXcE_Xzr6aXuP9t0eT17RX2wEsM6AbeTHocg4kG5Fm4wVwRo07b6NY41kAQtJEq5pWFDj917sjJp3KdDzOaQ_vAyMmg_ZflSESmu5X9-86Rmmzf7tDHrEnglmA6btZqLhpRAhGXASkYTOi5-FC2zYl3QkRG33W06mjDfZQJFvSwz6Ujyevs_teJw-I-zTI5zu2S5xoGa3HadtLFAVmTp9DrYY3tGo0KGSexg"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">NEON DREAMS</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2024</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-tertiary-container px-2 border border-[#111111]">SCI-FI</span>
+<span class="font-label text-[10px] font-bold uppercase bg-inverse-primary px-2 border border-[#111111]">NOIR</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>98%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[98%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-[#F8BBD0] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[-1.5deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="abstract artistic film reel and vintage camera lens with dramatic shadows and retro warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk9PHHmG_aZfwfNjUjZGDQ8WW5ITwKOg51wKnDNGSc7No3BY4UrSbxotEUzW9l_SkfuqyNq7ipERZ8xOWx9kRrAgi1yRpKOYZghmRfdDBtZw2chefZgaV9BQFJ0ke2vh6eaOcO_BnwJTvFTG6HXc-DhNt4QXK43Nd140i87Eoz0mOpeCU_eA7AoHVGWCNn7f2nJK7Cd_gaLnSsx51LkIeFRygNCSaitKqlhOzK5XT57Mx15U_LAGmMztE0JEmproM-ATorJojNQg"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">SILVER SCREEN</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2023</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-tertiary-container px-2 border border-[#111111]">DRAMA</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>82%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[82%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-[#B2DFDB] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[0.8deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="vibrant neon lights of a classic cinema marquee at night reflecting on wet pavement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_nwX0Z7Ke5UCyeFBfK9ZTU7bQ5thAmOvqs9VwOv6gbdnCT52s5MbrKyzzwsKgGoEge8lWuogr6MAyyy1oQDe6i1WAcIbOSwi1iG2mFK92QroxQxWq1NLC7lHfcHQrFRmLNLcmkuknDEFI_GzVIoLuxWKG-3M-Wr9uRu19Pf_uOlazZaG6GXUUWIYMgFZc1t1kC4o-kB8EQTaDlEid1B3NMI4iuwqOopFkpSsLSiWyzGiEP5A3EsgzUU3i3Yixe15yqWEeFNB9SA"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">NIGHT WATCH</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2021</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-inverse-primary px-2 border border-[#111111]">THRILLER</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>75%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[75%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-[#E1BEE7] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[-1deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="minimalist sunset over calm ocean with deep orange and purple gradient skies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkUPSM_GCi1V-1z5hyM0kelwzdu_MO5TrIAPvL5wPgRdVe9tNsuRSc5WGbjX9QYrllVhkIdXQH048Rp_-ufatyg_eBoHQwZbr89cQc7DWhwQwvL02h-PgFecUo1ZlAFtvIuKhUbeR7iDYDCKFHIBuBN2FpBGsPIUo7Fg3J-wopuJr9qSrXkZRwoNTrABdzAVnGysFQs73k1SLV2gC8HJz5nSToqC0Qrc41RdPAYVrnXvHALlr7x9C-fM9Sk7HKmY1NpjStaBYnAw"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">SUMMER DAZE</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2022</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-tertiary-container px-2 border border-[#111111]">ROMANCE</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>91%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[91%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-[#FFE082] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[1.5deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="macro shot of pop corn in a striped vintage paper bag with dramatic theatrical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEK1evZkf0wnKb75gF9287BHLP9aKYuEBFKDr9kuSBIyGbA3lUVch87TsI6xkWLQoD_ZgVRjpPV2csRYH4-PqD-MiIzx2VQ2eytk1gLZ0zcsgoL3OpBvafUAh9--xJGOb6_Gwms-6ydpmKKJWgPPqx3cwiPvCgIJ_QB4dZhq2_8YcSfcqawOWriJKgy7uau4jz9yNUZKif7GjuSEw_YgRVD2L9ePJNa24hO3IpfmIdj-dwq5JjIrS7VhVv4KmyV06ytOr16-Wazw"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">POPCORN HOUR</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2024</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-inverse-primary px-2 border border-[#111111]">COMEDY</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>64%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[64%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-[#DCEDC8] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[-0.5deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="dark forest with morning mist rolling through ancient pine trees in deep cinematic greens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBN6pr8NsfUj9X4jkAcPiqcKIUFqXn2IuMkjf1wxDGSdSFxl3h_mefg5x8DbwMTwCntDY-wC4TXRN-1u_qN3kaHcTK_YPAouzIqeMGjINGgpkL8INlkdiJqE1d9YRHNKlf5vnbmUHH3ef0S3R8AquTPgpeLpBMDbtq5S4YCE01Nbvsb41ZUXOw8rArAG7GMj1Yhi0gB8V5EmxNLAspTabRMaDA-MNDPuN8yukjGLGFx7rIA93HESYXYFCVktbeZUsMR-4cH4IdVQ"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">THE ECHOES</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2023</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-tertiary-container px-2 border border-[#111111]">HORROR</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>89%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[89%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="bg-[#FFF9C4] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[0.2deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="futuristic cityscape with flying vehicles and glowing neon signs in a rainy night cyberpunk aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABuFj1NAcysO9cswYho8spDyj9-RHRfPuYnjCTOb9HFQ_QDYcmZMsgxthH8P2A5Gy1eWCMXbxu3uX6pPAOW-5COzJe1I57GPOEUuP0P3H9DgyXEZo9eWN-eDT_IPQIF446cDXlnPHAv53aQGbRMkni-dUfWcGBojbyveglQ-_dnLoeYGOZ6y5DN2Ij0iogE0CGRF2rG7RR1f1hfvAIWBhja9o7xb4oLLJrSqsJffU7v0blESG8aY8HYU2nSvI_aBDnCHquVlQnYg"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">VOID RUNNER</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2025</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-inverse-primary px-2 border border-[#111111]">ACTION</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>95%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[95%]"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="bg-[#F8BBD0] border-[3px] border-[#111111] shadow-[6px_6px_0px_0px_#111111] p-6 rotate-[-1.2deg] flex flex-col gap-4">
+<div class="aspect-[2/3] border-[3px] border-[#111111] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up of an eye with a reflection of a digital code matrix in the iris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKjKS_-yJP9H8nfh7FrwJXRvnQhu7ijGnFGNlGfudc2_lBo_LZbcjqibx41ALp92cdT4sI0hXELAQeZRGACMLWKqeyVo9n9RAPalq-fhNpjFQQiaVDE7V5q55ULVLOK_yanM_N8bNVj5j1PKRUwuSantIYk16IYu5Hx4yXzj7M5HjkiLfNJ7PJ0u8MU-zGDbq3jjJW-l3LxZJyS1yMLx7AVPGwz42XylnXVhZNqThMD_QlcH7HX79P1naWT90QPpssKHKNahNqFQ"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline font-black text-2xl leading-tight">DEEP CODE</h4>
+<span class="font-label font-bold text-xs border-[2px] border-[#111111] px-2 py-0.5 bg-white">2024</span>
+</div>
+<div class="flex gap-2">
+<span class="font-label text-[10px] font-bold uppercase bg-tertiary-container px-2 border border-[#111111]">DOC</span>
+</div>
+<div class="mt-4">
+<div class="flex justify-between font-label text-[10px] font-black mb-1">
+<span>MATCH ENERGY ⚡</span>
+<span>71%</span>
+</div>
+<div class="h-4 border-[2px] border-[#111111] bg-surface p-0.5">
+<div class="h-full bg-primary-container border-r-[2px] border-[#111111] w-[71%]"></div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-[#F5F0E8] dark:bg-zinc-900 border-t-[3px] border-[#111111] dark:border-white fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center bg-[#FFEC40] text-[#111111] border-[2px] border-[#111111] px-4 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label text-[10px] font-bold uppercase">FEED</span>
+</div>
+<div class="flex flex-col items-center text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label text-[10px] font-bold uppercase">SEARCH</span>
+</div>
+<div class="flex flex-col items-center text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">database</span>
+<span class="font-label text-[10px] font-bold uppercase">VAULT</span>
+</div>
+<div class="flex flex-col items-center text-[#111111] dark:text-zinc-400 opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-label text-[10px] font-bold uppercase">USER</span>
+</div>
+</nav>
+<!-- Marquee -->
+<div class="fixed bottom-0 left-0 w-full bg-black py-4 border-t-[3px] border-[#111111] overflow-hidden z-[60] hidden md:block">
+<div class="marquee">
+<div class="marquee-content">
+<span class="text-tertiary-fixed font-label font-bold uppercase tracking-widest text-lg whitespace-nowrap">✦ 5000+ movies ✦ TF-IDF powered ✦ No neural nets harmed ✦ Cosine similarity goes brrr ✦</span>
+<span class="text-tertiary-fixed font-label font-bold uppercase tracking-widest text-lg whitespace-nowrap">✦ 5000+ movies ✦ TF-IDF powered ✦ No neural nets harmed ✦ Cosine similarity goes brrr ✦</span>
+</div>
+<div class="marquee-content">
+<span class="text-tertiary-fixed font-label font-bold uppercase tracking-widest text-lg whitespace-nowrap">✦ 5000+ movies ✦ TF-IDF powered ✦ No neural nets harmed ✦ Cosine similarity goes brrr ✦</span>
+<span class="text-tertiary-fixed font-label font-bold uppercase tracking-widest text-lg whitespace-nowrap">✦ 5000+ movies ✦ TF-IDF powered ✦ No neural nets harmed ✦ Cosine similarity goes brrr ✦</span>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start gap-8 bg-zinc-100 dark:bg-black border-t-[3px] border-[#111111] dark:border-zinc-800 mb-20 md:mb-16">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-black text-white bg-black px-2 inline-block">CINEMATCH</div>
+<p class="font-label text-[10px] tracking-widest uppercase text-zinc-500">BUILD_V1.0.4 // CINEMATCH_CORE</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-label text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF2D78] underline" href="#">INSTAGRAM</a>
+<a class="font-label text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF2D78] underline" href="#">GITHUB</a>
+<a class="font-label text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF2D78] underline" href="#">API_DOCS</a>
+<a class="font-label text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF2D78] underline" href="#">CREDITS</a>
+</div>
+</footer>
+</body></html>
